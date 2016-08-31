@@ -9,7 +9,7 @@ install:
   - pip install codecov
   
 script:
-  - coverage run Poker_Midter_test.py
+  - coverage run Poker_Midterm_test.py
   
 after_success:
   - codecov

@@ -25,6 +25,7 @@ def test_find_flush():
 def test_find_pairs():
     pairs = [Card('8', '♦'), Card('K', '♥'), Card('K', '♠'), Card('J', '♠'), Card('4', '♠')]
     assert find_ranks(pairs) == ['8', 'K', 'K', '4', 'J']
+    assert find_len(pairs) == 2
 
 def test_find_set():
     three_kind = [Card('K', '♦'), Card('K', '♥'), Card('K', '♠'), Card('J', '♠'), Card('4', '♠')]

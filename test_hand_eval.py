@@ -41,7 +41,7 @@ def test_find_fullhouse():
     
 def test_find_strait():
     strait_kind = [Card('6', '♦'), Card('2', '♥'), Card('3', '♠'), Card('4', '♠'), Card('5', '♠')]
-    assert find_strait(ranks) == ['2', '3', '4', '5', '6']
+    assert find_strait(['2', '3', '4', '5', '6']) == True
     
 def test_find_straitFlush():
     straitFlush_kind = [Card('10', '♠'), Card('J', '♠'), Card('Q', '♠'), Card('K', '♠'), Card('A', '♠')]

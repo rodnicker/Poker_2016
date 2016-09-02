@@ -16,3 +16,37 @@ def test_no_dupes():
     for card in hand:
         assert hand.count(card) == 1
         
+# pair_hand = [Card('9', '♦'), Card('9', '♥'), Card('4', '♠'), Card('J', '♠'), Card('Q', '♠')]
+# no_pair_hand = [Card('8', '♦'), Card('9', '♥'), Card('4', '♠'), Card('J', '♠'), Card('Q', '♠')]
+def test_find_flush():
+    suits = [Card('8', '♥'), Card('K', '♥'), Card('K', '♥'), Card('J', '♥'), Card('4', '♥')]
+    assert find_flush(suits) == ['♥', '♥', '♥', '♥', '♥']
+
+def test_find_pairs():
+    pairs = [Card('8', '♦'), Card('K', '♥'), Card('K', '♠'), Card('J', '♠'), Card('4', '♠')]
+    assert find_ranks(pairs) == ['8', 'K', 'K', '4', 'J']
+
+def test_find_set():
+    three_kind = [Card('K', '♦'), Card('K', '♥'), Card('K', '♠'), Card('J', '♠'), Card('4', '♠')]
+    assert find_set(ranks) == ['K', 'K', 'K', 'J', '4']
+
+def test_find_four():
+    four_kind = [Card('K', '♦'), Card('K', '♥'), Card('K', '♠'), Card('K', '♣'), Card('4', '♠')]
+    assert find_four(ranks) == ['K', 'K', 'K', 'K', '4']
+
+def test_find_fullhouse():
+    fullhouse_kind = [Card('K', '♦'), Card('K', '♥'), Card('K', '♠'), Card('4', '♥'), Card('4', '♠')]
+    assert find_fullhouse(ranks) == ['K', 'K', 'K', '4', '4']
+    
+def test_find_strait():
+    strait_kind = [Card('6', '♦'), Card('2', '♥'), Card('3', '♠'), Card('4', '♠'), Card('5', '♠')]
+    assert find_strait(ranks) == ['2', '3', '4', '5', '6']
+    
+def test_find_straitFlush():
+    straitFlush_kind = [Card('10', '♠'), Card('J', '♠'), Card('Q', '♠'), Card('K', '♠'), Card('A', '♠')]
+    assert find_straitFlush(ranks, suits) == ['10', '♠', 'J', '♠', 'Q', '♠', 'K', '♠', 'A', '♠']
+
+    
+
+
+    

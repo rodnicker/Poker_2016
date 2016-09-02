@@ -49,7 +49,7 @@ def test_find_straitFlush():
 
 def test_ranks():
     ranks_kind = [Card('J', '11'), Card('Q', '12'), Card('K', '13'), Card('A', '14')]
-    assert find_ranks[i] == ['11', '12', '13', '14']
+    assert find_ranks[i] == [11, 12, 13, 14]
     
 
 

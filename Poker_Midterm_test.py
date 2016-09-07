@@ -16,11 +16,11 @@ def deal_hand():
    
     
 def find_pairs(ranks):
-    pairs = []
+    pairs = set()
     for card in ranks:
-        if ranks.count(card) == 2 and card not in pairs:
-            pairs.append(card)
-    if len(pairs) >0 and len(pairs) <2:
+        if ranks.count(card) == 2:
+            pairs.add(card)
+    if len(pairs) == 1:
         print('You have a pair: ', pairs)
     elif len(pairs) == 2:
         print('You have two pair: ', pairs)
@@ -44,7 +44,10 @@ def find_four(ranks):
         if ranks.count(card) == 4:
             four_kind.add(card)
     if len(four_kind) == 1:
-        print('You have 4 of a kind: ', four_kind) 
+        print('You have 4 of a kind: ', four_kind)
+        return True
+    else:
+        return False
 
 
 def find_fullhouse(ranks):
@@ -59,8 +62,7 @@ def find_fullhouse(ranks):
             for card in fullhouse_kind:
                 print(card, end = ' ')            
             return True            
-        else:
-            return False
+    return False
 
           
 def find_flush(suits):

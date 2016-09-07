@@ -44,9 +44,10 @@ def test_find_strait():
     assert find_strait(['2', '3', '4', '5', '6']) == True
     
 def test_find_straitFlush():
-    straitFlush_kind = [Card('10', '♠'), Card('J', '♠'), Card('Q', '♠'), Card('K', '♠'), Card('A', '♠')]
-    assert find_straitFlush(ranks, suits) == ['10', '♠', 'J', '♠', 'Q', '♠', 'K', '♠', 'A', '♠']
-
+    ranks = ['10', 'J', 'Q', 'K', 'A']
+    suites = ['♠', '♠', '♠', '♠', '♠']
+    assert find_straitFlush([ranks, suites]) == True
+    
 def test_ranks():
     ranks_kind = [('J', '11'), ('Q', '12'), ('K', '13'), ('A', '14')]
     assert find_ranks[i] == [11, 12, 13, 14]
